@@ -63,13 +63,22 @@ class _HomePageState extends State<HomePage> {
                     title: Text("Peringatan"),
                     content: Text("Apakah anda yakin untuk menghapus akun ini"),
                     actions: [
-                      TextButton(onPressed: (){}, child: Text("Batal")),
-                      ElevatedButton(onPressed: (){}, child: Text("Ya")),
+                      TextButton(onPressed: () {}, child: Text("Batal")),
+                      ElevatedButton(onPressed: () {}, child: Text("Ya")),
                     ],
                   ),
                 );
               },
               child: Text("Contoh Dialog Hapus"),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Akun Berhasil Dihapus")),
+                );
+              },
+              child: Text("Snackbar"),
             ),
           ],
         ),

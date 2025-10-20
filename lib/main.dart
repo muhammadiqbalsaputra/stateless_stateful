@@ -55,7 +55,22 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 20),
-            ElevatedButton(onPressed: () {}, child: Text("Dialog")),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text("Peringatan"),
+                    content: Text("Apakah anda yakin untuk menghapus akun ini"),
+                    actions: [
+                      TextButton(onPressed: (){}, child: Text("Batal")),
+                      ElevatedButton(onPressed: (){}, child: Text("Ya")),
+                    ],
+                  ),
+                );
+              },
+              child: Text("Contoh Dialog Hapus"),
+            ),
           ],
         ),
       ),
